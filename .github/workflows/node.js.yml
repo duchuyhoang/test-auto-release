@@ -36,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Use secret directly
-        run: echo "${{ vars.NPM_TOKEN }} xxxx ${{ secrets.GH_TOKEN }}"
+        run: export NPM_TOKEN= "${{ secrets.NPM_TOKEN }}"
 
       - name: Publish
         run: npm publish
