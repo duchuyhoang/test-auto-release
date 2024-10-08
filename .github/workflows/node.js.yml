@@ -36,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Use secret directly
-        run: echo $NPM_TOKEN
+        run: echo "${{ secrets.GITHUB_TOKEN }} xxxx"
 
       - name: Publish
         run: npm publish
