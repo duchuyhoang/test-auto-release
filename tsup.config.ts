@@ -1,8 +1,8 @@
-import { Options, defineConfig } from "tsup";
+import { Options, defineConfig } from 'tsup';
 
 export default defineConfig((options): Options[] => {
   const commonOptions: Options = {
-    entry: ["src/index.ts"],
+    entry: ['src/index.ts'],
     sourcemap: true,
     dts: true,
     ...options,
@@ -11,10 +11,10 @@ export default defineConfig((options): Options[] => {
   return [
     {
       ...commonOptions,
-      format: ["cjs", "esm"],
+      format: ['cjs', 'esm'],
       // outExtension: () => ({ js: '.cjs' }),
       clean: true,
-      outDir: "./dist",
+      outDir: './dist',
     },
   ];
 });
