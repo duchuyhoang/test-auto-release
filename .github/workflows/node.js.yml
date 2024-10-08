@@ -35,8 +35,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
-      - name: Use secret directly
-        run: export NPM_TOKEN= "${{ secrets.NPM_TOKEN }}"
-
       - name: Publish
-        run: npm publish
+        run: npm publish --//registry.npmjs.org/:_authToken="${{ secrets.NPM_TOKEN }}"
