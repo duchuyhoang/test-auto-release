@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm install --force
-      - run: npm build && touch dist/.nojekyll
+      - run: npm run build && touch dist/.nojekyll
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
