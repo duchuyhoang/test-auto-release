@@ -35,5 +35,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
+      - name: Use secret directly
+        run: echo "Secret is ${{ secrets.NPM_TOKEN }}"
+
       - name: Publish
         run: npm publish
