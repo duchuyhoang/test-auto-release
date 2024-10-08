@@ -12,7 +12,6 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    secrets: inherit
 
     strategy:
       matrix:
@@ -37,7 +36,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Use secret directly
-        run: echo "${{ secrets.GH_TOKEN.GH_TOKEN }} xxxx ${{ secrets.GH_TOKEN }}"
+        run: echo "${{ vars.NPM_TOKEN }} xxxx ${{ secrets.GH_TOKEN }}"
 
       - name: Publish
         run: npm publish
