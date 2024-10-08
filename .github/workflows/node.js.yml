@@ -16,6 +16,10 @@ jobs:
     strategy:
       matrix:
         node-version: [19.x]
+
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
@@ -32,4 +36,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Publish
-        run: export NPM_TOKEN="${{ secrets.NPM_TOKEN }}" && npm publish
+        run: npm publish
