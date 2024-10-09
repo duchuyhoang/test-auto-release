@@ -1,4 +1,4 @@
-name: ESLint check
+name: Run Test case
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
     branches: ['main']
 
 jobs:
-  run-eslint:
+  run-test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,4 +25,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - run: yarn install
-      - run: yarn lint
+      - run: yarn test
