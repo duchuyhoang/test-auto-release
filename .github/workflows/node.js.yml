@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [19.x]
+        node-version: [20.x]
 
     env:
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -24,9 +24,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm install --force
-      - run: npm run build && touch dist/.nojekyll
+          cache: 'yarn'
+      - run: yarn install
+      - run: yarn build && touch dist/.nojekyll
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
