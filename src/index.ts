@@ -4,5 +4,5 @@ console.log('add new featuer');
 
 
 export function goi(){
-    return 1
+    return 1;
 }
